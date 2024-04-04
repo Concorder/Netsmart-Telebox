@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combat Readiness Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+<h2>Combat Readiness Calculator</h2>
+<form id="calcForm">
+  <div>
+    <h3>Team 1</h3>
+    <label for="opener1Speed">Opener Speed:</label>
+    <input type="number" id="opener1Speed" name="opener1Speed" min="1" required>
+    <label for="damageDealer1Speed">Damage Dealer Speed:</label>
+    <input type="number" id="damageDealer1Speed" name="damageDealer1Speed" min="1" required>
+    <label for="boost1">Combat Readiness Boost (%):</label>
+    <input type="number" id="boost1" name="boost1" min="0" required>
+  </div>
+  <div>
+    <h3>Team 2</h3>
+    <label for="opener2Speed">Opener Speed:</label>
+    <input type="number" id="opener2Speed" name="opener2Speed" min="1" required>
+    <label for="damageDealer2Speed">Damage Dealer Speed:</label>
+    <input type="number" id="damageDealer2Speed" name="damageDealer2Speed" min="1" required>
+    <label for="boost2">Combat Readiness Boost (%):</label>
+    <input type="number" id="boost2" name="boost2" min="0" required>
+  </div>
+  <button type="submit">Calculate</button>
+</form>
+<div id="result"></div>
+
+<script>
+  document.getElementById('calcForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get input values
+    const opener1Speed = parseInt(document.getElementById('opener1Speed').value);
+    const damageDealer1Speed = parseInt(document.getElementById('damageDealer1Speed').value);
+    const boost1 = parseInt(document.getElementById('boost1').value);
+    const opener2Speed = parseInt(document.getElementById('opener2Speed').value);
+    const damageDealer2Speed = parseInt(document.getElementById('damageDealer2Speed').value);
+    const boost2 = parseInt(document.getElementById('boost2').value);
+
+    // Calculate combat readiness
+    const maxSpeed1 = Math.max(opener1Speed, damageDealer1Speed);
+    const combatReadiness1 = (damageDealer1Speed / maxSpeed1) * 100;
+    const maxSpeed2 = Math.max(opener2Speed, damageDealer2Speed);
+    const combatReadiness2 = (damageDealer2Speed / maxSpeed2) * 100;
+
+    // Apply boost
+    const finalCombatReadiness1 = combatReadiness1 + boost1;
+    const finalCombatReadiness2 = combatReadiness2 + boost2;
+
+    // Display result
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = `
+        <h3>Team 1</h3>
+        <p>Damage Dealer 1 Combat Readiness: ${finalCombatReadiness1.toFixed(2)}%</p>
+        <h3>Team 2</h3>
+        <p>Damage Dealer 2 Combat Readiness: ${finalCombatReadiness2.toFixed(2)}%</p>
+      `;
+  });
+</script>
+</body>
+</html>

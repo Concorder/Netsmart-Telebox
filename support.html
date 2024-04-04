@@ -1,0 +1,116 @@
+<!doctype html>
+<html  lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Telebox | Support</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#fafafa">
+</head>
+<body>
+<header id="header">
+  <div class="container">
+    <div class="header_container col-md-12">
+      <a href="./index.html">
+        <img class="header__logo" src="img/logo.png" alt="logo">
+      </a>
+      <nav class="desktop-menu xs-d-none">
+        <a data-url="company_sections" href="./index.html#company_sections">Company</a>
+
+        <ul data-url="payments">
+          <a href="./index.html#payments">Payment Solutions</a>
+          <li data-url="premium_sms"><a href="./index.html#premium_sms">Premium SMS</a></li>
+          <li data-url="dcb"><a href="./index.html#dcb">Direct Carrier Billing</a></li>
+        </ul>
+
+        <a data-url="messaging" href="./index.html#messaging">Messaging</a>
+      </nav>
+
+      <a href="./index.html#contact_us" class="btn btn-outline-primary">Contact us</a>
+      <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav class="mobile-menu">
+        <a data-url="company_sections" href="./index.html#company_sections">Company</a>
+        <a data-url="payments" href="./index.html#payments">Payment Solutions</a>
+        <ul>
+          <li><a data-url="premium_sms" href="./index.html#premium_sms">Premium SMS</a></li></li>
+          <li><a data-url="dcb" href="./index.html#dcb">Direct Carrier Billing</a></li>
+        </ul>
+        <a data-url="messaging" href="./index.html#messaging">Messaging</a>
+
+      </nav>
+    </div>
+  </div>
+
+</header>
+
+<section style="min-height: calc(100vh - 287px); margin-top: 52px" id="contact_us">
+  <div class="container  gsapUp">
+    <div class="col-sm-12">
+      <h2 class="text-center mb-2">Support request</h2>
+    </div>
+    <div class="clearfix"></div>
+    <div class="flex-wrap">
+      <div class="col-sm-8">
+        <p>Whether you have questions, require assistance with your account, need help
+          with billing, or have a technical concern, we're here to ensure you have a smooth and positive experience with
+          our services.</p>
+        <p>Please complete the form below with your inquiry or issue, and our dedicated support team will respond
+          promptly to assist you.</p>
+        <p>Thank you for choosing our services, and we look forward to assisting you with any questions or concerns you may have.</p>
+      </div>
+      <form name="contactSuccess" id="contactform" method="post" class="col-sm-4 d-flex flex-column justify-content-between">
+        <input type="hidden" name="form-name" value="supportForm">
+        <div class="xs-mb-1 input-container">
+          <input placeholder=" " id="name" name="fullContactName" class="text-input mb-1"
+                                                    type="text"><label
+          for="name">Full Name</label></div>
+        <div class="xs-mb-1 input-container">
+          <input placeholder=" " id="contactEmail" name="contactEmail" id="contactEmail" class="text-input mb-1" type="text">
+          <label for="contactEmail">Email</label></div>
+        <div class="xs-mb-1 input-container">
+          <input placeholder=" " name="formContactPhone" id="contactPhone" class="text-input mb-1" type="text"><label
+          for="email">Phone</label></div>
+        <div class="xs-mb-1 input-container">
+          <textarea style="font-size: 14px; min-height: 100px" placeholder="Details"
+                                                       id="email" class="text-input mb-1" type="text"></textarea></div>
+
+        <input class="btn btn-primary" value="Submit" type="submit"></form>
+    </div>
+
+  </div>
+</section>
+<footer class="bg-grey">
+  <div class="col-sm-12 py-1 d-flex justify-content-between align-items-center">
+    <nav>
+      <a href="policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms and Conditions</a>
+    </nav>
+
+    <nav>
+      <span style="margin: 0 16px"> © Telebox&nbsp;<span id="year"></span></span>
+    </nav>
+
+  </div>
+
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
