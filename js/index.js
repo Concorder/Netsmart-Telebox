@@ -95,26 +95,26 @@ const blocksOnScreen = document.querySelectorAll(".onScreenTrigger")
 const navigationLinks = document.querySelectorAll('[data-url]');
 
 
-navigationLinks.forEach(link => {
-    const targetSelector = link.getAttribute('data-url');
-    const section = document.querySelector("#"+targetSelector);
+// navigationLinks.forEach(link => {
+//     const targetSelector = link.getAttribute('data-url');
+//     const section = document.querySelector("#"+targetSelector);
 
-    gsap.to(link, {
-        scrollTrigger: {
-            trigger: section,
-            start: 'top 50%',
-            end: 'bottom 50%',
-            onToggle: self => {
-                if (self.isActive) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            },
-            // markers: true, // Remove this line in production
-        },
-    });
-});
+//     gsap.to(link, {
+//         scrollTrigger: {
+//             trigger: section,
+//             start: 'top 50%',
+//             end: 'bottom 50%',
+//             onToggle: self => {
+//                 if (self.isActive) {
+//                     link.classList.add('active');
+//                 } else {
+//                     link.classList.remove('active');
+//                 }
+//             },
+//             // markers: true, // Remove this line in production
+//         },
+//     });
+// });
 
 // splashtext
 function splashText() {

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Telebox | Home</title>
+    <meta name="description" content="Global leader in mobile payments and messaging.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+        <header id="header">
+            <div class="container">
+                <div class="header_container col-md-12">
+                    <a href="./index.html">
+                        <img class="header__logo" src="img/logo.png" alt="logo">
+                    </a>
+                    <nav class="desktop-menu xs-d-none">
+                        <a  href="./index.html">Home</a>
+                        <a  href="./services.html">Services</a>
+                        <a  style="display: none" href="./help.html">Help</a>
+                        <a class="active"  href="./contact.html">Contact</a>
+                    </nav>
+
+                    
+                    <div class="menu-toggle">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <nav class="mobile-menu">
+                        <a  href="./index.html">Home</a>
+                        <a  href="./services.html">Services</a>
+                        <a  style="display: none" href="./help.html">Help</a>
+                        <a  href="./contact.html">Contact</a>
+          
+                      </nav>
+                </div>
+            </div>
+
+        </header>
+        <section id="contact_us">
+            <div class="container  gsapUp">
+                <div class="col-sm-12">
+                    <h2 class="text-white">Contact Us</h2>
+                    <h5 class="text-center mb-2 text-white">Personalized assistance.</h5>
+
+                </div>
+                <div class="clearfix"></div>
+                <div class="flex-wrap">
+                    <div class="col-sm-8">
+                        <p>We feel that nothing should stop your business reaching its potential, which is why we have
+                            friendly,
+                            helpful staff ready to answer your questions.</p>
+                        <p>Whether you’re just getting started with mobile
+                            messaging & payments or are looking to expand and existing or complex strategy, our team are
+                            on
+                            hand to help find the best solution for you and to offer support you whenever you need
+                            it.</p>
+                    </div>
+                    <form action="contactSuccess" name="contactForm" method="post"
+                          class="col-sm-4 d-flex flex-column justify-content-between">
+                        <input type="hidden" name="form-name" value="contactForm">
+                        <div class="input-container">
+                            <input placeholder=" " autocomplete="1" id="name" required name="fullContactName"
+                                   class="text-input mb-1"
+                                   type="text"><label
+                                for="name">Full Name</label></div>
+                        <div class="input-container">
+                            <input placeholder=" " autocomplete="1" id="contactEmail" name="contactEmail"
+                                   id="contactEmail"
+                                   class="text-input mb-1" type="text">
+                            <label for="contactEmail">Email</label></div>
+                        <div class=" input-container">
+                            <input placeholder=" " autocomplete="1" name="formContactPhone" id="contactPhone"
+                                   class="text-input mb-1"
+                                   type="number"><label
+                                for="contactPhone">Phone</label></div>
+                        <div class="input-container">
+          <textarea style="font-size: 14px; min-height: 100px" placeholder="Details"
+                    id="email" class="text-input mb-1" type="text"></textarea></div>
+
+                        <input class="btn btn-primary" value="Submit" type="submit">
+                    </form>
+                </div>
+
+            </div>
+        </section>
+        <footer class="bg-grey">
+            <div class="col-sm-12 py-1 d-flex justify-content-between align-items-center">
+                <nav>
+                    <a href="policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms and Conditions</a>
+                </nav>
+
+                <nav>
+                    <span style="margin: 0 16px"> © Telebox&nbsp;<span id="year"></span></span>
+                </nav>
+
+            </div>
+
+        </footer>
+    </div>
+</div>
+<script src="./js/main.js"></script>
+</body>
+</html>

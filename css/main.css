@@ -35,7 +35,7 @@ body {
     font-size: 17px;
     line-height: 1.42857143;
     color: #28282a;
-    background-color: #ffffff;
+    background-color: var(--background-default);
     font-weight: 600;
 }
 
@@ -300,8 +300,8 @@ section {
     --neutral-color: #CCCCCE;
     --contrast-text: #28282A;
     --grey-text: #3f3f3f;
-    --background-default: rgba(255, 255, 255);
-    --background-alt: #e9edf5;
+    --background-default: #3f3352;
+    --background-alt: #2f273d;
     --thirdly-one: #ab239b;
 
 }
@@ -534,8 +534,8 @@ section {
 
 p {
     line-height: 1.5;
-    color: var(--grey-text);
-    font-weight: 600;
+    color: var(--neutral-color);
+    font-weight: 400;
 }
 
 
@@ -545,7 +545,6 @@ a:hover {
 
 /*herobanner*/
 .herobanner {
-    min-height: calc(100vh - 97px);
     margin-top: 52px;
     display: flex;
     flex-direction: column;
@@ -556,6 +555,9 @@ a:hover {
     background: #3f3352;
     padding-top: 60px;
     padding-bottom: 60px;
+}
+.fullscreen_block{
+    min-height: calc(100vh - 132px);
 }
 
 .herobanner__container {
@@ -698,7 +700,7 @@ a:hover {
 nav a, nav ul {
     text-decoration: none;
     margin: 0 10px;
-    color: var(--grey-text);
+    color: var(--neutral-color);
     position: relative;
     text-align: left;
     cursor: pointer;
@@ -793,8 +795,8 @@ nav:hover li.active {
 }
 
 header {
+    
     text-align: center;
-    background: #FFF;
     z-index: 999;
     position: fixed;
     top: 0;
@@ -833,6 +835,9 @@ header.fadeOut{
 nav {
     display: inline-block;
     text-align: center;
+}
+a{
+transition: color 0.3s;
 }
 
 .cta {
@@ -893,6 +898,7 @@ span {
 
 .gradient-text {
     background: -webkit-linear-gradient(var(--thirdly-one), var(--accent-color), var(--thirdly-one));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -974,7 +980,7 @@ h2 {
 }
 
 a:hover, a:focus, nav ul:hover {
-    color: var(--main-color)
+    color: #fff;
 }
 
 .gradient-container__mobile-payment {
@@ -1033,7 +1039,6 @@ a:hover, a:focus, nav ul:hover {
 .text-input {
     width: 100%;
     border: 0;
-    background: var(--background-default);
     padding: 2px 8px;
     border-bottom: 1px solid var(--background-alt);
     font-weight: 400;
@@ -1046,6 +1051,7 @@ input::-webkit-inner-spin-button {
 }
 
 input[type=number] {
+    appearance: textfield;
     -moz-appearance: textfield;
 }
 
@@ -1068,11 +1074,17 @@ input[type=number] {
 }
 
 input:focus + label, input:not(:placeholder-shown) + label {
-    transform: translateY(-20px);
-    font-size: 12px;
+    transform: translate(-8px, -26px);
+    color: var(--neutral-color);
+    font-size: 15px;
     transition: 0.3s;
 }
-
+.panel th {
+    padding: 0 30px 0 0;
+}
+.panel td {
+    font-weight: 400;
+}
 .logoCenter {
     position: absolute;
     left: 50%;
@@ -1084,6 +1096,9 @@ footer {
     display: flex;
     flex-direction: column;
     background: var(--background-alt);
+}
+footer  span{
+    color: var(--neutral-color);
 }
 
 .grid-container {
@@ -1182,6 +1197,12 @@ h1.cta {
     animation: fadeIn 3s;
     animation-fill-mode: forwards;
     animation-delay: 5s;
+}
+.herobanner__mail {
+    opacity: 0;
+    animation: fadeIn 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
 }
 
 .herobanner__flow {
@@ -1557,24 +1578,76 @@ a:hover {
     z-index: 1;
 }
 
+.terms h2, .terms h3{
+    color: #fff;
+}
+
 .terms h3 {
     margin-top: 60px;
     margin-bottom: 30px;
 }
 
 .terms ul {
-    color: #222;
+    color: #fff;
     font-weight: 400;
     font-size: 15px;
 }
 
 .terms p {
-    color: #222;
+    color: var(--neutral-color);
     font-weight: 400;
     font-size: 15px;
     margin-bottom: 15px;
 }
+.accordion {
+    display: none;
+  }
 
+  .accordion-label {
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    padding: 4px 6px;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    /* background-color: var(--thirdly-one); */
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 4px;
+    transition: 0.4s;
+  }
+
+  .accordion-label::after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .accordion:checked + .accordion-label::after {
+    content: "\2212";
+  }
+
+  .panel {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    margin-top: 20px;
+    color: #fff;
+  }
+
+  .accordion:checked + .accordion-label + .panel {
+    display: block;
+  }
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 @keyframes heroFloat {
     100% {
@@ -1651,7 +1724,7 @@ label {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: var(--main-color);
+    background-color: var(--neutral-color);
     margin: 4px 0;
 }
 
@@ -1670,12 +1743,11 @@ label {
 
 .mobile-menu a {
     opacity: 1;
-    color: var(--grey-text);
+    color: var(--neutral-color);
     text-align: center;
     text-decoration: none;
     font-size: 20px;
     padding: 10px 0;
-    border-bottom: 1px solid var(--background-alt);
     text-align: left;
 
 }
@@ -1723,9 +1795,7 @@ label {
     .cases-dcb .rounded_container {
         height: 230px;
     }
-    .btn .btn-outline-primary{
-
-    }
+    
     .desktop-menu > *{
         margin: 0 10px;
     }
